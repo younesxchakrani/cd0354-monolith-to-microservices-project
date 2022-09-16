@@ -17,6 +17,9 @@ branches:
     - dev
 
 script:
+  -echo "$DOCKER_PASSWORD"
+  -echo "$DOCKER_USERNAME"
+
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker tag udagram-api-feed younesxchakrani/udagram-api-feed:v1
 
