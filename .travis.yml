@@ -16,6 +16,7 @@ branches:
     - master
     - dev
 
+#script
 script:
 
   - docker build -t udagram-api-feed ./udagram-api-feed
