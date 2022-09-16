@@ -22,6 +22,8 @@ branches:
 - docker tag udagram-reverseproxy younes/udagram-reverseproxy:v1
 
 
+
+
 - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
 - docker push younes/udagram-api-feed:v1
 
