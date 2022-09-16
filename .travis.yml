@@ -31,15 +31,15 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
   - docker tag udagram-reverseproxy younesxchakrani/udagram-reverseproxy:v1
 
-  - docker login -u "DOCKER_USERNAME" -p "DOCKER_PASSWORD" docker.io
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
   - docker push younesxchakrani/udagram-api-feed:v1
 
-  - docker login -u "DOCKER_USERNAME" -p "DOCKER_PASSWORD" docker.io
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
   - docker push younesxchakrani/udagram-api-user:v1
 
-  - docker login -u "DOCKER_USERNAME" -p "DOCKER_PASSWORD" docker.io
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
   - docker push younesxchakrani/udagram-frontend:v1
 
-  - docker login -u "DOCKER_USERNAME" -p "DOCKER_PASSWORD" docker.io
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
   - docker push younesxchakrani/udagram-reverseproxy:v1
 
