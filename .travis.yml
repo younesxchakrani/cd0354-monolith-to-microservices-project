@@ -18,26 +18,26 @@ branches:
 
 script:
   - docker build -t udagram-api-feed ./udagram-api-feed
-  - docker tag udagram-api-feed younes/udagram-api-feed:v1
+  - docker tag udagram-api-feed younesxchakrani/udagram-api-feed:v1
 
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker tag udagram-api-user younes/udagram-api-user:v1
+  - docker tag udagram-api-user younesxchakrani/udagram-api-user:v1
 
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend younes/udagram-frontend:v1
+  - docker tag udagram-frontend younesxchakrani/udagram-frontend:v1
 
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-reverseproxy younes/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy younesxchakrani/udagram-reverseproxy:v1
 
   - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push younes/udagram-api-feed:v1
+  - docker push younesxchakrani/udagram-api-feed:v1
 
   - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push younes/udagram-api-user:v1
+  - docker push younesxchakrani/udagram-api-user:v1
 
   - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push younes/udagram-frontend:v1
+  - docker push younesxchakrani/udagram-frontend:v1
 
   - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push younes/udagram-reverseproxy:v1
+  - docker push younesxchakrani/udagram-reverseproxy:v1
 
