@@ -29,7 +29,7 @@ script:
   - docker tag udagram-frontend younesxchakrani/udagram-frontend:v1
 
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-reverseproxy younesxchakrani/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy younesxchakrani/udagram-reverseproxy:v2
 
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
   - docker push younesxchakrani/udagram-api-feed:v1
