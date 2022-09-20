@@ -41,5 +41,5 @@ script:
   - docker push younesxchakrani/udagram-frontend:v1
 
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
-  - docker push younesxchakrani/udagram-reverseproxy:v1
+  - docker push younesxchakrani/udagram-reverseproxy:v2
 
