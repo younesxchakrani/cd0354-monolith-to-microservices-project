@@ -26,10 +26,10 @@ script:
   - docker tag udagram-api-user younesxchakrani/udagram-api-user:v1
 
   - docker build -t udagram-frontend ./udagram-frontend
-  - docker tag udagram-frontend younesxchakrani/udagram-frontend:v1
+  - docker tag udagram-frontend younesxchakrani/udagram-frontend:v3
 
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-  - docker tag udagram-reverseproxy younesxchakrani/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy younesxchakrani/udagram-reverseproxy:v2
 
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
   - docker push younesxchakrani/udagram-api-feed:v1
@@ -38,8 +38,8 @@ script:
   - docker push younesxchakrani/udagram-api-user:v1
 
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
-  - docker push younesxchakrani/udagram-frontend:v1
+  - docker push younesxchakrani/udagram-frontend:v3
 
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
-  - docker push younesxchakrani/udagram-reverseproxy:v1
+  - docker push younesxchakrani/udagram-reverseproxy:v2
 
