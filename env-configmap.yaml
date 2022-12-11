@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pr3configmap
+data:
+  AWS_REGION: us-east-1
+  AWS_PROFILE: default
+  AWS_BUCKET: arn:aws:s3:::bucketprojetarchitecture-425677684974
+  URL: http://localhost:8100

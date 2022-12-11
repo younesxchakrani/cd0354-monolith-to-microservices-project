@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-frontend
+  labels:
+    app: udagram-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: udagram-frontend
+  template:
+    metadata:
+      labels:
+        app: udagram-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: younesxchakrani/udagram-frontend:v3
+        ports:
+        - containerPort: 80
+        resources:
+           requests:
+             cpu: 200m
+           limits:
+             cpu: 300m
+        envFrom:
+          - configMapRef:
+              name: pr3configmap
+          - secretRef:
+              name: pr3secret
+          - secretRef:
+              name: your-secret-name

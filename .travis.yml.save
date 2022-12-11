@@ -1,0 +1,43 @@
+language: node_js
+node_js:
+  - '14.0.0'
+
+services:
+   -docker
+
+# blacklist
+branches:
+  except:
+    - main
+
+# whitelist
+branches:
+  only:
+    - master
+    - dev
+
+script:
+  - docker build -t udagram-api-feed ./udagram-api-feed
+  - docker tag udagram-api-feed Error response from daemon: Get https://registry-1.docker.io/v2/: unauthorized: incorrect username or passwordyounesxchakrani/udagram-api-feed:v1
+
+  - docker build -t udagram-api-user ./udagram-api-user
+  - docker tag udagram-api-user younes/udagram-api-user:v1
+
+  - docker build -t udagram-frontend ./udagram-frontend
+  - docker tag udagram-frontend younes/udagram-frontend:v1
+
+  - docker build -t udagram-reverseproxy ./udagram-reverseproxy
+  - docker tag udagram-reverseproxy younes/udagram-reverseproxy:v1
+
+  - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push younes/udagram-api-feed:v1
+
+  - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push younes/udagram-api-user:v1
+
+  - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push younes/udagram-frontend:v1
+
+  - echo "$DOCKER_PASSWORD". | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push younes/udagram-reverseproxy:v1
+
